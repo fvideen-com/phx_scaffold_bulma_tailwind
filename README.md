@@ -19,6 +19,12 @@ Enter into browser `localhost:4000/tailwind` to view [tailwindcss](https://tailw
 
 ## How was setup it
 
+### Creating Phoenix 1.6 LiveView project
+
+```sh
+mix phx.new phx_scaffold_bulma_tailwind --live --no-ecto
+```
+
 ### Install [dart_css](https://github.com/fvideen/dart_sass)
 
 Follow instructions [here](https://github.com/fvideen/dart_sass#adding-to-phoenix).
