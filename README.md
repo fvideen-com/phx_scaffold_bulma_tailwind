@@ -1,4 +1,4 @@
-# Elixir Phoenix 1.6 - Scaffold to Bulma and Tailwind css libraries
+# Elixir Phoenix LiveView 1.6 with Bulma and Tailwind CSS
 
 To start your Phoenix server:
 
@@ -11,25 +11,31 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ## How test it
 
-Enter into browser `localhost:4000/` to view [bulmacss](https://bulma.io) [admin template](https://bulmatemplates.github.io/bulma-templates/).
+- Enter `localhost:4000/` to [bulmacss](https://bulma.io) and [admin template](https://bulmatemplates.github.io/bulma-templates/).
+- Enter `localhost:4000/tailwind` to [tailwindcss](https://tailwindcss.com) [admin template](https://bulmatemplates.github.io/bulma-templates/).
 
-> Or
+## How this project was made
 
-Enter into browser `localhost:4000/tailwind` to view [tailwindcss](https://tailwindcss.com) [admin template](https://bulmatemplates.github.io/bulma-templates/).
+- Creating `mix phx.new phx_scaffold_bulma_tailwind --live --no-ecto`
+- Install and configure [dart_css](https://github.com/fvideen/dart_sass).
+- Install and configure [bulma](https://bulma.io).
+- Install and configure [tailwind](https://tailwindcss.com)
+- Configure `mix.exs`
+- Configure `dev.exs`
 
-## How was setup it
+> Follow complete steps:
 
-### Creating Phoenix 1.6 LiveView project
+### 1. Creating Phoenix 1.6 LiveView project
 
 ```sh
 mix phx.new phx_scaffold_bulma_tailwind --live --no-ecto
 ```
 
-### Install [dart_css](https://github.com/fvideen/dart_sass)
+### 2. Install [dart_css](https://github.com/fvideen/dart_sass)
 
 Follow instructions [here](https://github.com/fvideen/dart_sass#adding-to-phoenix).
 
-### Install [bulma](https://bulma.io)
+### 3. Install [bulma](https://bulma.io)
 
 ```sh
 npm i -D --prefix assets bulma
@@ -40,7 +46,7 @@ Import `bulma.sass` file into `css/app.scss` with:
 @import "../node_modules/bulma/bulma.sass";
 ```
 
-### Install [tailwindcss](https://tailwindcss.com)
+### 4. Install [tailwindcss](https://tailwindcss.com)
 
 ```sh
 npm i -D --prefix assets tailwindcss autoprefixer postcss postcss-loader
