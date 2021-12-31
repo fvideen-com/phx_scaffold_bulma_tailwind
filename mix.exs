@@ -60,7 +60,8 @@ defmodule PhxScaffoldBulmaTailwind.MixProject do
     [
       setup: ["deps.get"],
       "assets.deploy": [
-        "tailwindcss --postcss --minify --input=css/tailwind.css --output=../priv/static/assets/tailwind.css",
+        "cmd --cd assets npm install",
+        "cmd --cd assets npm run tailwind",
         "esbuild default --minify",
         "sass default --no-source-map --style=compressed",
         "phx.digest"

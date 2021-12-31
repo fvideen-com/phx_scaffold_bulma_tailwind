@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "tailwind": "NODE_ENV=production tailwindcss --postcss --minify --input=css/tailwind.css --output=../priv/static/assets/tailwind.css"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.0.8"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.1",
     "bulma": "^0.9.3",

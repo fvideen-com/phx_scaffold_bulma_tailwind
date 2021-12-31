@@ -2,6 +2,10 @@
 
 This project is scaffold bulma and tailwind boilerplate code to project [Elixir](https://elixir-lang.org/) [Phoenix](https://www.phoenixframework.org/) `~> 1.6` that now uses [esbuild](https://esbuild.github.io/).
 
+Playground [here!]()
+
+> Thanks to [fly.io](https://fly.io)
+ 
 ## Running
 
 To start your Phoenix server:
@@ -102,6 +106,14 @@ Import `css/tailwind.css` into `assets/css/app.scss` after `css` styles:
 @import "./tailwind.css";
 ```
 
+Includes script into `package.json` with:
+
+```json
+  "scripts": {
+    "tailwind": "NODE_ENV=production tailwindcss --postcss --minify --input=css/tailwind.css --output=../priv/static/assets/tailwind.css"
+  },
+```
+
 Configure `mix.exs` into function `aliases` with:
 
 ```elixir
@@ -112,7 +124,8 @@ Configure `mix.exs` into function `aliases` with:
     [
       setup: ["deps.get"],
       "assets.deploy": [
-        "tailwindcss --postcss --minify --input=css/tailwind.css --output=../priv/static/assets/tailwind.css",
+        "cmd --cd assets npm install",
+        "cmd --cd assets npm run tailwind",
         "esbuild default --minify",
         "sass default --no-source-map --style=compressed",
         "phx.digest"

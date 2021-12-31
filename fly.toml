@@ -1,0 +1,41 @@
+# fly.toml file generated for phx-scaffold-bulma-tailwind on 2021-12-30T22:46:39-03:00
+
+app = "phx-scaffold-bulma-tailwind"
+
+kill_signal = "SIGTERM"
+kill_timeout = 5
+processes = []
+
+[env]
+  PHX_HOST = "phx-scaffold-bulma-tailwind.fly.dev"
+  PORT = "8080"
+
+[experimental]
+  allowed_public_ports = []
+  auto_rollback = true
+
+[[services]]
+  http_checks = []
+  internal_port = 8080
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "2s"
