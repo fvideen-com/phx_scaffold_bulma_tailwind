@@ -2,7 +2,9 @@
 
 This project is scaffold bulma and tailwind boilerplate code to project [Elixir](https://elixir-lang.org/) [Phoenix](https://www.phoenixframework.org/) `~> 1.6` that now uses [esbuild](https://esbuild.github.io/).
 
-Playground [here!]()
+  - Bulma demo [here!](https://phx-scaffold-bulma-tailwind.fly.dev)
+  - Tailwind demo [here!](https://phx-scaffold-bulma-tailwind.fly.dev/tailwind)
+
 
 > Thanks to [fly.io](https://fly.io)
  
