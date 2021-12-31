@@ -16,7 +16,24 @@ config :phx_scaffold_bulma_tailwind, PhxScaffoldBulmaTailwindWeb.Endpoint,
   secret_key_base: "58lVxbFxL6y3cbpUBhBXVZjThFtqwGLhdhVlFRupaAZ0P4DK6GsYM2mmXkMQ7rkb",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    npx: [
+      "tailwindcss",
+      "--input=css/tailwind.css",
+      "--output=../priv/static/assets/tailwind.css",
+      "--postcss",
+      "--watch",
+      cd: Path.expand("../assets", __DIR__)
+    ],
+    esbuild: {
+      Esbuild,
+      :install_and_run,
+      [:default, ~w(--sourcemap=inline --watch)]
+    },
+    sass: {
+      DartSass,
+      :install_and_run,
+      [:default, ~w(--embed-source-map --source-map-urls=absolute --watch)]
+    }
   ]
 
 # ## SSL Support

@@ -10,7 +10,11 @@ import Config
 # Configures the endpoint
 config :phx_scaffold_bulma_tailwind, PhxScaffoldBulmaTailwindWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: PhxScaffoldBulmaTailwindWeb.ErrorView, accepts: ~w(html json), layout: false],
+  render_errors: [
+    view: PhxScaffoldBulmaTailwindWeb.ErrorView,
+    accepts: ~w(html json),
+    layout: false
+  ],
   pubsub_server: PhxScaffoldBulmaTailwind.PubSub,
   live_view: [signing_salt: "hhq3YZBT"]
 
@@ -21,7 +25,8 @@ config :phx_scaffold_bulma_tailwind, PhxScaffoldBulmaTailwindWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :phx_scaffold_bulma_tailwind, PhxScaffoldBulmaTailwind.Mailer, adapter: Swoosh.Adapters.Local
+config :phx_scaffold_bulma_tailwind, PhxScaffoldBulmaTailwind.Mailer,
+  adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false
@@ -34,6 +39,13 @@ config :esbuild,
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ]
+
+config :dart_sass,
+  version: "1.43.4",
+  default: [
+    args: ~w(css/app.scss ../priv/static/assets/app.css),
+    cd: Path.expand("../assets", __DIR__)
   ]
 
 # Configures Elixir's Logger

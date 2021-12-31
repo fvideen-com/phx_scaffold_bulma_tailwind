@@ -45,7 +45,8 @@ defmodule PhxScaffoldBulmaTailwind.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:dart_sass, "~> 0.2", runtime: Mix.env() == :dev}
     ]
   end
 
@@ -58,7 +59,12 @@ defmodule PhxScaffoldBulmaTailwind.MixProject do
   defp aliases do
     [
       setup: ["deps.get"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"]
+      "assets.deploy": [
+        "tailwindcss --postcss --minify --input=css/tailwind.css --output=../priv/static/assets/tailwind.css",
+        "esbuild default --minify",
+        "sass default --no-source-map --style=compressed",
+        "phx.digest"
+      ]
     ]
   end
 end

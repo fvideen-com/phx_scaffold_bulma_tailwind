@@ -18,6 +18,7 @@ defmodule PhxScaffoldBulmaTailwindWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/tailwind", PageController, :tailwind
   end
 
   # Other scopes may use custom stacks.
