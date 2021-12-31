@@ -1,4 +1,8 @@
-# Elixir Phoenix LiveView 1.6 with Bulma and Tailwind CSS
+# Elixir Phoenix LiveView 1.6 Bulma and Tailwind CSS
+
+This project is scaffold bulma and tailwind boilerplate code to project [Elixir](https://elixir-lang.org/) [Phoenix](https://www.phoenixframework.org/) `~> 1.6` that now uses [esbuild](https://esbuild.github.io/).
+
+## Running
 
 To start your Phoenix server:
 
@@ -7,14 +11,16 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## How test it
+## Testing
 
 - Enter `localhost:4000/` to [bulmacss](https://bulma.io) and [admin template](https://bulmatemplates.github.io/bulma-templates/).
 - Enter `localhost:4000/tailwind` to [tailwindcss](https://tailwindcss.com) [admin template](https://bulmatemplates.github.io/bulma-templates/).
 
-## How this project was made
+## Production
+
+Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+
+## NOW => How this project was made :D
 
 - Creating `mix phx.new phx_scaffold_bulma_tailwind --live --no-ecto`
 - Install and configure [dart_css](https://github.com/fvideen/dart_sass).
