@@ -1,4 +1,5 @@
 {
+  "license": "MIT",
   "scripts": {
     "tailwind": "NODE_ENV=production tailwindcss --postcss --minify --input=css/tailwind.css --output=../priv/static/assets/tailwind.css"
   },

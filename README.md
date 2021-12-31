@@ -5,9 +5,8 @@ This project is scaffold bulma and tailwind boilerplate code to project [Elixir]
   - Bulma demo [here!](https://phx-scaffold-bulma-tailwind.fly.dev)
   - Tailwind demo [here!](https://phx-scaffold-bulma-tailwind.fly.dev/tailwind)
 
-
 > Thanks to [fly.io](https://fly.io)
- 
+
 ## Running
 
 To start your Phoenix server:
@@ -175,10 +174,22 @@ config :fvideen_platform, FvideenPlatformWeb.Endpoint,
   ]
 ```
 
+## Problems with [Phoenix Tailwind Library](https://github.com/phoenixframework/tailwind)
+
+I have problems working with phoenix tailwind library and [dart_css](https://github.com/fvideen/dart_sass) library.
+
+After `mix phx.server` command any style can take in pages `*.html.heex`. Both pages with [bulma.io](https://builma.io) and [tailwindcss](https://tailwindcss.com) not works and console print errors into `assets`.
+
+I hope soon create a branch with [phoenixframework tailwind](https://github.com/phoenixframework/tailwind), dart_sass and bulmacss to show this issue. 
+
+> Sorry my english I am brazilian :)
+> Thanks for all community free software foundation and opensource I love it :D
+
 ## Learn more
 
   * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+  * Guides: https://hexdocs.pm/phoenix/overview.html/
+  * Docs: https://hexdocs.pm/phoenix/
+  * Forum: https://elixirforum.com/c/phoenix-forum/
+  * Source: https://github.com/phoenixframework/phoenix/
+  * Fly.io: https://community.fly.io/
